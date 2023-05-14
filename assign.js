@@ -5,7 +5,7 @@ export const makeIntro = (name, mbti) => {
   // 형식은 자유지만 이름과 MBTI가 포함되어야 합니다.
 
   // 여기다 코드를 작성하세요.
-  let introduce = '';
+  let introduce = '안녕하세요! '+ name+"입니다. 제 MBTI는 "+mbti+"입니다.";
 
   return introduce;
 };
@@ -17,7 +17,24 @@ export const assign2 = (arr, divisor) => {
   // 나누어 떨어지지 않는 값이 한개도 없다면 배열에 "없어요!" 만 담아서 return 합니다.
 
   // 여기에 코드를 작성하세요.
+  // arr를 for문을 돌며 if조건절을 통해 divisor로 나누어 떨어지지 않는 수를 answer리스트에 push
   let answer = [];
+  for (let i = 0; i< arr.length; i++){
+    if(arr[i] % divisor != 0 ){
+      answer.push(arr[i]);
+    }
+  }
 
+// answer리스트 길이 0이면 "없어요!" push
+  if(answer.length == 0){
+    answer.push("없어요!");
+  }
+    // 오름차순 정렬
+  else{
+    answer.sort(function(a,b){
+      return a-b;
+    });
+  }
+  // console.log(answer);
   return answer;
 };
